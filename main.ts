@@ -15,10 +15,11 @@ namespace atp3012 {
     //% blockId="wrietData" block="write atp3012 to %dat"
     //% weight=70 blockGap=8
     export function write(d: string): void {
-        let buf = pins.createBuffer(d.length);
+        let buf = pins.createBuffer(d.length + 1);
         for (let i = 0; i < d.length; i++) {
             buf[i] = d.charCodeAt(i)
         }
+        buf[d.length] = 0x0d
         pins.i2cWriteBuffer(I2C_ADDR, buf)
     }
 }
