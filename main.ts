@@ -5,7 +5,7 @@
 /**
  * ATP3012 block
  */
-//% weight=10 color=#800000 icon="\u1f508" block="atp3012"
+//% weight=10 color=#800000 icon="\u260e" block="atp3012"
 namespace atp3012 {
     let I2C_ADDR = 0x2e
     /**
