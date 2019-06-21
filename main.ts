@@ -22,4 +22,18 @@ namespace atp3012 {
         buf[d.length] = 0x0d
         pins.i2cWriteBuffer(I2C_ADDR, buf)
     }
+    /**
+     * read Data
+     */
+    //% blockId="readData" block="read atp3012"
+    //% weight=68 blockGap=8
+    export function read(): string {
+        let buff
+        let buf = pins.i2cReadBuffer(I2C_ADDR,10);
+        buff=""
+        for(let i=0;i<buf.length;i++){
+            buff = buff + String.fromCharCode(buf[i])
+        }
+        return buff
+    }
 }
