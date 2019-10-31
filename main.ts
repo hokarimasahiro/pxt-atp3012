@@ -5,7 +5,7 @@
 /**
  * ATP3012 block
  */
-//% weight=10 color=#800000 icon="\u260e" block="atp3012"
+//% weight=10 color=#800000 icon="\u1F508" block="atp3012"
 namespace atp3012 {
     let I2C_ADDR = 0x2e
     /**
@@ -29,9 +29,9 @@ namespace atp3012 {
     //% weight=68 blockGap=8
     export function read(): string {
         let buff
-        let buf = pins.i2cReadBuffer(I2C_ADDR,10);
-        buff=""
-        for(let i=0;i<buf.length;i++){
+        let buf = pins.i2cReadBuffer(I2C_ADDR, 10);
+        buff = ""
+        for (let i = 0; i < buf.length; i++) {
             buff = buff + String.fromCharCode(buf[i])
         }
         return buff
