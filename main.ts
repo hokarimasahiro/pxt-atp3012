@@ -9,10 +9,21 @@
 namespace atp3012 {
     let I2C_ADDR = 0x2e
     /**
+      * test atp3012
+      */
+    //% blockId=test_atp3012 block="test atp3012"
+    export function isAvalable(): boolean {
+        if (testi2c.testReadI2c(I2C_ADDR)==0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /**
      * write Data
      * @param d data to atp3012, eg: "bo'kuwa maikurobittodesu."
      */
-    //% blockId="wrietData" block="write atp3012 to %dat"
+    //% blockId="wrietData" block="write data %dat to atp3012"
     //% weight=70 blockGap=8
     export function write(d: string): void {
         let buf = pins.createBuffer(d.length + 1);
