@@ -13,11 +13,8 @@ namespace atp3012 {
       */
     //% blockId=test_atp3012 block="test atp3012"
     export function isAvalable(): boolean {
-//        if (testi2c.testReadI2c(I2C_ADDR)==0){
-            return true;
-//        } else {
-//            return false;
-//        }
+        if (read()!="") return true;
+        else return false;
     }
     /**
      * write Data
